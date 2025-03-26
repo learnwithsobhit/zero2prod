@@ -1,3 +1,3 @@
 fn main() {
-    println!("Hello, world from CI and GitHub Actions!");
+    println!("Hello, world from CI and GitHub Actions and Rust!");
 }
