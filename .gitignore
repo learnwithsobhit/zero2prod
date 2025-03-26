@@ -1,2 +1,10 @@
 /target
 .vscode
+.bazelrc
+/bazel-bin
+/bazel-out
+/bazel-testlogs
+/bazel-zero2prod
+/bazel-zero2prod.runfiles
+/bazel-zero2prod.runfiles_manifest
+/bazel-zero2prod.runfiles_manifest.sha256
