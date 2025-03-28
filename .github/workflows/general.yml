@@ -80,6 +80,7 @@ jobs:
 
       - name: Check that queries are fresh
         run: cargo sqlx prepare --workspace --check -- --all-targets
+        # cargo sqlx prepare -- --all-targets --all-features   
 
   # `fmt` container job
   fmt:
