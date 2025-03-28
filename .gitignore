@@ -1,5 +1,7 @@
 /target
 .vscode
+.idea
+tags
 .bazelrc
 /bazel-bin
 /bazel-out
