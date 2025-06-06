@@ -21,3 +21,8 @@ async fn main() -> std::io::Result<()> {
     run(listener, connection_pool)?.await?;
     Ok(())
 }
+
+
+/*
+curl --request POST --data 'name=le%20guin&email=ursula_le_guin%40gmail.com' https://zero2prod-qur3a.ondigitalocean.app/subscriptions --verbose
+*/
