@@ -23,16 +23,16 @@ pub struct FormData {
 pub async fn subscribe(form: web::Form<FormData>, pool: web::Data<PgPool>) -> HttpResponse {
     let name = match SubscriberName::parse(form.0.name) {
         Ok(name) => name,
-        Err(_) => return HttpResponse::BadRequest().finish(),
+        Err(_) => return HttpResponse::BadRequest().json("Invalid name provided"),
     };
     let email = match SubscriberEmail::parse(form.0.email) {
         Ok(email) => email,
-        Err(_) => return HttpResponse::BadRequest().finish(),
+        Err(_) => return HttpResponse::BadRequest().json("Invalid email provided"),
     };
     let new_subscriber = NewSubscriber { email, name };
     match insert_subscriber(&pool, &new_subscriber).await {
-        Ok(_) => HttpResponse::Ok().finish(),
-        Err(_) => HttpResponse::InternalServerError().finish(),
+        Ok(_) => HttpResponse::Ok().json("Subscription successful"),
+        Err(_) => HttpResponse::InternalServerError().json("Failed to store subscription"),
     }
 }
 
