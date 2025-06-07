@@ -11,6 +11,12 @@ impl SubscriberEmail {
     }
 }
 
+impl AsRef<str> for SubscriberEmail {
+    fn as_ref(&self) -> &str {
+        &self.0
+    }
+}
+
 #[cfg(test)]
 mod tests {
     use claims::assert_err;
